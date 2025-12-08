@@ -1,0 +1,12 @@
+theme = Catppuccin Mocha
+
+window-colorspace = display-p3
+
+cursor-style = block
+
+font-size = 18
+font-family = TX-02
+font-family = "JetBrainsMono Nerd Font Mono"
+
+shell-integration-features = no-cursor
+shell-integration = zsh
