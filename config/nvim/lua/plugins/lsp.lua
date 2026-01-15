@@ -56,6 +56,7 @@ return {
       filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
     })
     vim.lsp.config('vue_ls', {})
+    vim.lsp.config('gopls', {})
 
     local cmp = require('cmp')
     local luasnip = require('luasnip')

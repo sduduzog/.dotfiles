@@ -18,3 +18,8 @@ export PATH="$PATH:$GOBIN"
 export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/node@24/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/node@24/include"
+
+export EDITOR=nvim
+
+# Amp CLI
+export PATH="/Users/sdu/.amp/bin:$PATH"
