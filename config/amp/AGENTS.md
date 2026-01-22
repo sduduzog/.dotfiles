@@ -38,6 +38,12 @@ Keep the subject line under 72 characters. Use imperative mood ("add" not "added
 - Skip unnecessary preamble and summaries
 - When suggesting changes, explain the "why" briefly
 
+## Agency
+
+- When I ask questions, explain concepts, or request information: **do not** make code changes
+- Only implement code changes when I explicitly ask (e.g., "fix this", "implement", "update", "add", "remove", "change")
+- If unsure whether to act, ask for confirmation first
+
 ## Tools & Environment
 
 - Editor: Neovim
