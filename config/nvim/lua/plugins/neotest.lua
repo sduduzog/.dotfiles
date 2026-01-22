@@ -3,18 +3,19 @@ return {
 	dependencies = {
 		"nvim-neotest/nvim-nio",
 		"nvim-lua/plenary.nvim",
-		"antoinemadec/FixCursorHold.nvim",
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-neotest/neotest-jest",
-		"marilari88/neotest-vitest",
 		"jfpedroza/neotest-elixir",
 	},
+	keys = {
+		{ "<leader>tt", function() require("neotest").run.run() end, desc = "Run nearest test" },
+		{ "<leader>tf", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run file tests" },
+		{ "<leader>to", function() require("neotest").output.open({ enter = true }) end, desc = "Show test output" },
+		{ "<leader>ts", function() require("neotest").summary.toggle() end, desc = "Toggle test summary" },
+	},
 	config = function()
-		local neotest = require("neotest")
-		-- require("neotest.logging"):set_level("trace")
-		neotest.setup {
+		require("neotest").setup {
 			adapters = {
-				-- require("neotest-vitest"),
 				require("neotest-jest") {
 					jestCommand = "npx jest",
 					cwd = require("neotest-jest").root,
@@ -40,10 +41,10 @@ return {
 				},
 			},
 			icons = {
-				passed = " ",
-				running = " ",
-				failed = " ",
-				unknown = " ",
+				passed = " ",
+				running = " ",
+				failed = " ",
+				unknown = " ",
 				running_animated = vim.tbl_map(function(s)
 					return s .. " "
 				end, { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }),
@@ -59,13 +60,5 @@ return {
 				enabled = true,
 			},
 		}
-
-		-- local wk = require("which-key")
-		--
-		-- wk.add {
-		-- 	{ "<leader>tt", testNearest },
-		-- 	{ "<leader>tf", testFile },
-		-- 	{ "<leader>to", testOutput },
-		-- }
 	end,
 }

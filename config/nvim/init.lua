@@ -1,5 +1,5 @@
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   vim.fn.system {
     'git',
     'clone',
@@ -60,10 +60,12 @@ opt.showmode = false
 -- auto completion menu height
 vim.opt.pumheight = 10
 
-require('lazy').setup {
+require('lazy').setup({
   { import = 'plugins' },
   { import = 'plugins.lsp' },
-}
+}, {
+  rocks = { enabled = false },
+})
 
 require('keymaps')
 
