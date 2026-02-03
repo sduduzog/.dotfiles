@@ -1,0 +1,22 @@
+[init]
+	defaultBranch = main
+
+[alias]
+	last = log -1 HEAD --stat
+
+[core]
+	pager = delta
+	autocrlf = input
+
+[pull]
+	rebase = true
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	side-by-side = true

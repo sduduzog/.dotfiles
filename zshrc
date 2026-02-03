@@ -19,6 +19,8 @@ export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/node@24/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/node@24/include"
 
+export PATH="/Users/sdu/.bun/bin:$PATH"
+
 export EDITOR=nvim
 
 # Amp CLI

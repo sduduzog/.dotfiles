@@ -55,6 +55,7 @@ return {
       },
       filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
     })
+    vim.lsp.config('elixirls', {})
     vim.lsp.config('vue_ls', {})
     vim.lsp.config('gopls', {})
 

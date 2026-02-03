@@ -1,0 +1,2 @@
+#!/bin/bash
+ln -sfn ~/.dotfiles/config/agents ~/.config/agents
