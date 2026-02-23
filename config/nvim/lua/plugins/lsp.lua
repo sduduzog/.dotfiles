@@ -58,6 +58,12 @@ return {
     vim.lsp.config('elixirls', {})
     vim.lsp.config('vue_ls', {})
     vim.lsp.config('gopls', {})
+    vim.lsp.config('graphql', {
+      cmd = { 'graphql-lsp', 'server', '-m', 'stream' },
+      filetypes = { 'graphql', 'typescriptreact', 'javascriptreact' },
+      root_markers = { '.graphqlrc', '.graphqlrc.json', '.graphqlrc.yaml', '.graphqlrc.yml',
+        '.graphqlrc.js', '.graphqlrc.ts', 'graphql.config.*' },
+    })
 
     local cmp = require('cmp')
     local luasnip = require('luasnip')
