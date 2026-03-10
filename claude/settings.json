@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "defaultMode": "plan"
+  },
+  "model": "sonnet",
+  "autoUpdatesChannel": "stable"
+}

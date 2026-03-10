@@ -1,2 +1,2 @@
 #!/bin/bash
-ln -sfn ~/.dotfiles/config/agents ~/.config/agents
+ln -sfn ~/.dotfiles/claude/settings.json ~/.claude/settings.json
