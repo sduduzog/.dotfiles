@@ -20,7 +20,6 @@ return {
 		},
 		extensions = {
 			"toggleterm",
-			"nvim-tree",
 			{
 				sections = { lualine_a = { "filetype" } },
 				filetypes = { "lspsagaoutline" },

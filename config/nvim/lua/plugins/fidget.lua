@@ -8,6 +8,11 @@ return {
 					done_ttl = 1,
 				},
 			},
+			integration = {
+				["nvim-tree"] = {
+					enable = false,
+				},
+			},
 		}
 	end,
 }
