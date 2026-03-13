@@ -2,7 +2,7 @@ return {
 	"RRethy/vim-illuminate",
 	config = function()
 		require("illuminate").configure {
-			filetyps_denylist = { "telescope" },
+			filetypes_denylist = { "telescope" },
 		}
 	end,
 }

@@ -89,5 +89,3 @@ vim.diagnostic.config {
 }
 
 vim.lsp.set_log_level('error')
-
-require('amp').setup({ auto_start = true, log_level = 'info' })
