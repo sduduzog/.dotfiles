@@ -62,7 +62,6 @@ vim.opt.pumheight = 10
 
 require('lazy').setup({
   { import = 'plugins' },
-  { import = 'plugins.lsp' },
 }, {
   rocks = { enabled = false },
 })

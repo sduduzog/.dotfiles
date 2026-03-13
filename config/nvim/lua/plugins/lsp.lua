@@ -24,25 +24,6 @@ return {
       configNamespace = 'typescript',
     }
 
-    -- local ts_ls_config = {
-    --   init_options = {
-    --     plugins = {
-    --       vue_plugin,
-    --     },
-    --   },
-    --   filetypes = tsserver_filetypes,
-    -- }
-
-    -- vim.lsp.config('expert', {
-    --   cmd = { 'expert' },
-    --   root_markers = { 'mix.exs', '.git' },
-    --   filetypes = { 'elixir', 'eelixir', 'heex' }
-    -- })
-
-    -- vim.lsp.config('vue_ls', vue_ls_config)
-    -- vim.lsp.config('ts_ls', ts_ls_config)
-    -- vim.lsp.enable({ 'elixirls', 'ts_ls', 'vue_ls', 'eslint' }) -- If using `ts_ls` replace `vtsls` to `ts_ls`
-
     vim.lsp.config('vtsls', {
       settings = {
         vtsls = {
