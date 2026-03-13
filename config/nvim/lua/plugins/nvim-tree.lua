@@ -1,7 +1,10 @@
 return {
 	"nvim-tree/nvim-tree.lua",
 	version = "*",
-	lazy = false,
+	cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle", "NvimTreeOpen", "NvimTreeClose", "NvimTreeFocus" },
+	keys = {
+		{ "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", desc = "File tree" },
+	},
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},

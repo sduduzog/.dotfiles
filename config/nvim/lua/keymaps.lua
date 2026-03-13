@@ -4,7 +4,6 @@ local wk = require("which-key")
 wk.add {
 	{ "<leader>]", ":bn<cr>" },
 	{ "<leader>[", ":bp<cr>" },
-	{ "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", mode = "n" },
 	{ "<leader>lg", "<cmd>LazyGit<cr>", mode = "n" },
 	{ "<leader>bd", ":bd<cr>" },
 	{ "<leader>fs", function() require("telescope.builtin").current_buffer_fuzzy_find() end, name = "Find in current buffer" },
