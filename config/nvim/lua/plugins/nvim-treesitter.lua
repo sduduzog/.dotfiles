@@ -2,7 +2,12 @@ return {
   'nvim-treesitter/nvim-treesitter',
   dependencies = {
     { 'nvim-treesitter/nvim-treesitter-textobjects', branch = 'main' },
-    'JoosepAlviste/nvim-ts-context-commentstring',
+    {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+      opts = {
+        enable_autocmd = false,
+      },
+    },
     'nvim-treesitter/nvim-treesitter-context',
   },
   build = ':TSUpdate',
