@@ -3,6 +3,9 @@ return {
   config = function()
     require('conform').setup {
       formatters_by_ft = {
+        elixir = { 'mix' },
+        heex = { 'mix' },
+        eelixir = { 'mix' },
         lua = { 'stylua' },
         sh = { 'beautysh' },
         vue = { 'prettier' },

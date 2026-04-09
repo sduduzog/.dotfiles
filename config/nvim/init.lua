@@ -17,7 +17,6 @@ local opt = vim.opt
 
 vim.cmd([[
     filetype plugin indent on
-    syntax on
 ]])
 
 opt.updatetime = 250

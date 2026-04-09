@@ -1,6 +1,9 @@
 {
   "permissions": {
-    "defaultMode": "plan"
+    "defaultMode": "plan",
+    "allow": [
+      "mcp__pencil"
+    ]
   },
   "model": "sonnet",
   "autoUpdatesChannel": "stable"
