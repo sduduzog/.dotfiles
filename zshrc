@@ -32,3 +32,5 @@ export EDITOR=nvim
 
 # Amp CLI
 export PATH="/Users/sdu/.amp/bin:$PATH"
+
+export PATH="/Users/sdu/.local/bin:$PATH"

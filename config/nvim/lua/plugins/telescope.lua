@@ -36,15 +36,15 @@ return {
 
 		local builtin = require("telescope.builtin")
 
-	wk.add {
-		{ "<leader>gg", builtin.builtin },
-		{ "gb", builtin.git_branches },
-		{ "gd", builtin.lsp_definitions },
-		{ "gi", builtin.lsp_implementations },
-		{ "gr", builtin.lsp_references },
-		{ "<leader>d", builtin.diagnostics },
-		{ "<leader>rn", vim.lsp.buf.rename, desc = "Rename symbol" },
-		{ "<C-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature help" },
-	}
+		wk.add {
+			{ "<leader>gg", builtin.builtin },
+			{ "gb", builtin.git_branches },
+			{ "gd", builtin.lsp_definitions },
+			{ "gi", builtin.lsp_implementations },
+			{ "gr", builtin.lsp_references },
+			{ "<leader>d", builtin.diagnostics },
+			{ "<leader>rn", vim.lsp.buf.rename, desc = "Rename symbol" },
+			{ "<C-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature help" },
+		}
 	end,
 }
