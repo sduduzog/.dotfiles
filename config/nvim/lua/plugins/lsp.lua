@@ -27,17 +27,12 @@ return {
       },
       filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
     })
-    vim.lsp.config('elixirls', {
-      settings = {
-        elixirLS = {
-          dialyzerEnabled = false,
-        },
-      },
-    })
+    vim.lsp.enable('expert')
     vim.lsp.config('vue_ls', {})
     vim.lsp.config('tailwindcss', {
       root_dir = function(bufnr, on_dir)
         local fname = vim.api.nvim_buf_get_name(bufnr)
+        -- v3: explicit tailwind/postcss config files
         local root = vim.fs.dirname(vim.fs.find({
           'tailwind.config.js',
           'tailwind.config.cjs',
@@ -48,6 +43,20 @@ return {
           'postcss.config.mjs',
           'postcss.config.ts',
         }, { path = fname, upward = true })[1])
+        if not root then
+          -- v4: detect via package.json containing tailwindcss
+          local pkg = vim.fs.find('package.json', { path = fname, upward = true })[1]
+          if pkg then
+            local f = io.open(pkg, 'r')
+            if f then
+              local content = f:read('*a')
+              f:close()
+              if content:find('"tailwindcss"') then
+                root = vim.fs.dirname(pkg)
+              end
+            end
+          end
+        end
         if root then
           on_dir(root)
         end
@@ -66,6 +75,9 @@ return {
           },
         },
       },
+    })
+    vim.lsp.config('emmet_language_server', {
+      filetypes = { 'html', 'css', 'scss', 'less', 'javascriptreact', 'typescriptreact', 'vue', 'heex', 'elixir' },
     })
     vim.lsp.config('gopls', {})
     vim.lsp.config('graphql', {

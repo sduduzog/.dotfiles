@@ -86,4 +86,6 @@ vim.diagnostic.config {
   virtual_text = false,
 }
 
-vim.lsp.set_log_level('error')
+vim.lsp.log.set_level('error')
+
+vim.lsp.document_color.enable(true, nil, { style = 'virtual' })
