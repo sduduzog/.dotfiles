@@ -5,8 +5,15 @@ return {
   },
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
-    local vue_language_server_path = vim.fn.expand '$MASON/packages' ..
-        '/vue-language-server' .. '/node_modules/@vue/language-server'
+    local vue_language_server_path = vim.fs.joinpath(
+      vim.fn.stdpath('data'),
+      'mason',
+      'packages',
+      'vue-language-server',
+      'node_modules',
+      '@vue',
+      'language-server'
+    )
 
     local vue_plugin = {
       name = '@vue/typescript-plugin',
@@ -27,7 +34,10 @@ return {
       },
       filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
     })
-    vim.lsp.enable('expert')
+    if vim.fn.executable('expert') == 1 then
+      vim.lsp.enable('expert')
+    end
+    vim.lsp.enable('oxlint')
     vim.lsp.config('vue_ls', {})
     vim.lsp.config('tailwindcss', {
       root_dir = function(bufnr, on_dir)

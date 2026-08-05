@@ -1,4 +1,34 @@
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+local is_windows = vim.fn.has('win32') == 1 or vim.fn.has('win64') == 1
+
+if is_windows then
+  local shell
+  if vim.fn.executable('pwsh') == 1 then
+    shell = 'pwsh'
+  elseif vim.fn.executable('powershell') == 1 then
+    shell = 'powershell'
+  end
+
+  if shell then
+    local command_prefix = table.concat {
+      '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command ',
+      '[Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();',
+      "$PSDefaultParameterValues['Out-File:Encoding']='utf8';",
+    }
+
+    if shell == 'pwsh' then
+      command_prefix = command_prefix .. "$PSStyle.OutputRendering='PlainText';"
+    end
+
+    vim.opt.shell = shell
+    vim.opt.shellcmdflag = command_prefix
+    vim.opt.shellpipe = '> %s 2>&1'
+    vim.opt.shellquote = ''
+    vim.opt.shellxquote = ''
+    vim.opt.shelltemp = false
+  end
+end
+
+local lazypath = vim.fs.joinpath(vim.fn.stdpath('data'), 'lazy', 'lazy.nvim')
 if not vim.uv.fs_stat(lazypath) then
   vim.fn.system {
     'git',
